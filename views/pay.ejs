@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+    <style>
+        body {
+          background-color: #323232;
+        }
+        h1,p{
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+          }
+          .container {
+                 width: 500px;
+                height: 350px;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                position: relative; /* or absolute */
+                /* left:33.5%; */
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                flex-direction: column;
+                border-radius: 50px;
+            }
+            a:link , a:visited {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 5px 9px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+            input[type=number] {
+                /* width: 100%; */
+                padding: 1px 5px;
+                margin: 5px 0;
+                box-sizing: border-box;
+            }
+    </style>
+</head>
+<body  onload="getAccountNumber()">
+    <h1 class="mt-4">Sparks Bank</h1>
+    <p>*Pay anyone and anywhere, in seconds*</p>
+    <div style="display: flex; justify-content: center;">
+        <hr style="margin: 20px 0px; width: 50%;">
+      </div>
+    <p id="balance"></p>
+
+    <%- include('../partials/messages') %>
+    <br>
+    <div class="container">
+        <form action="/pay" method="POST">
+            <div>
+                <h2 style="text-align: center;">Payment</h2>
+                <br>
+                <label for="accountNumber">Account Number : </label>
+                <input type="number" id="accountNumber" name="accountNumber" placeholder="Acc. No. of Reciever">
+            </div>
+            <br><br>
+            <div>
+                <label for="amount">Amount : </label>
+                <input type="number" id="amount" name="amount" placeholder="Enter Amount">
+            </div>
+            <br><br>
+            <div style="display: none;">
+                <label for="user"> </label>
+                <input type="object" id="user" name="user">
+            </div>
+            <button type="submit">Pay</button>
+            <br><br>
+            <div>Cancel Payment ?</div><br>
+            <a href="/dashboard">Cancel</a>
+        </form>
+    </div>
+    <script src="../clientjs/pay.js"></script>
+</body>
+</html>

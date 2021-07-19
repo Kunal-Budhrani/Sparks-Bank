@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+          background-color: #323232;
+        }
+        h1 ,p{
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+          }
+          .container {
+                 width: 500px;
+                height: 350px;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                position: relative; /* or absolute */
+                /* left:33.5%; */
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                flex-direction: column;
+                border-radius: 50px;
+            }
+            .DP{
+                width: 300px;
+                height: 225px;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                background-color: white;
+                border-radius: 25px;
+                margin-left: 50px;
+            }
+            .button {
+                background-color: #ffffff; 
+                border: none;
+                color:  #000000;
+                padding: 12px 28px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 12px;
+                cursor: pointer;
+                margin-left: 50px;
+            }
+            a:link {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+            a:visited {
+                color: rgb(255, 255, 255);
+                background-color: rgb(66, 66, 65);
+                padding: 14px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+            a:link.logout , a:visited.logout {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 5px 9px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+    </style>
+</head>
+<body onload="userData()">
+    <div id="user">
+        <%= user %>
+    </div>
+    <div id="allUsers">
+        <%= allUsers %>
+    </div>
+    <h1 class="mt-4">Sparks Bank</h1>
+    <p>*Pay anyone and anywhere, in seconds*</p>
+    <p class="lead mb-3" id="welcome" style="margin-top: 30px;"></p>
+    <div class="btn-profile">
+        <button class="button" onclick="profile()">Profile</button>
+    </div>
+    <div class="DP" id="DP" style="display: none;">
+        <ol>
+            <li id="name"></li><br>
+            <li id="email"></li><br>
+            <li id="accountNumber"></li><br>
+            <li id="balance"></li><br>
+            <a href="/users/logout" onclick="logout()" class="logout">Logout</a>
+        </ol>
+    </div>
+    <hr>
+    <%- include('../partials/messages') %>
+    <br><br>
+    <div class="container">
+        <div><a href="/allCustomers">All Customers</a></div> <br><br>
+        <div><a href="/pay">Pay</a></div><br><br>
+        <div><a href="/history">Transaction-History</a></div>
+    </div>
+    <script src="../clientjs/dashboard.js" type="text/javascript"></script>
+</body>
+</html>

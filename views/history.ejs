@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction-History</title>
+    <style>
+        body {
+          background-color: #323232;
+        }
+        h1 ,p{
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+          }
+          .container {
+                 width: 600px;
+                height: auto;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                position: relative; /* or absolute */
+                /* left:33.5%; */
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                flex-direction: column;
+                border-radius: 50px;
+            }
+            table, th, td {
+                 border: 1px solid black;
+                 border-collapse: collapse;
+                 padding: 10px;
+            }
+            #table tr:nth-child(even) {
+                background-color: #eee;
+            }
+            #table tr:nth-child(odd) {
+                background-color: rgb(155, 151, 151);
+            }
+            #table th {
+                background-color: black;
+                color: white;
+            }
+            caption {
+            text-align: center;
+            text-transform: uppercase;
+          }
+          a:link , a:visited {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 5px 9px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+    </style>
+</head>
+<body onload="transactionHistory()">
+    <h1>Sparks Bank</h1>
+    <p>*Pay anyone and anywhere, in seconds*</p>
+    <div style="display: flex; justify-content: center;">
+        <hr style="margin: 20px 0px; width: 50%;">
+      </div>
+    <p>Your Transactions</p>
+    <div class="container">
+        <table id="table">
+            <caption>History</caption>
+            <thead>
+                <br><br>
+                <th>
+                    Date&Time
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Status
+                </th>
+            </thead>
+            <tbody id="history"></tbody>
+        </table>
+        <br><br>
+        <a href="/dashboard">Back</a>
+        <br><br>
+    </div>
+    <script src="clientjs/history.js"></script>
+</body>
+</html>
+
+<!-- <tr>
+    <br>
+    <td>
+        $(history.dateAndTime)
+    </td>
+    <br>
+    <td>
+        $(history.amount)
+    </td>
+    <br>
+    <td>
+        $(history.status)
+    </td>
+</tr> -->

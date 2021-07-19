@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+          background-color: #323232;
+        }
+        h1,p {
+            margin: auto;
+            margin-bottom: 10px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            display: flex;
+                justify-content: center;
+                align-items: center;
+            color: white;
+          }
+          .container {
+                 width: 500px;
+                height: 350px;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                position: relative; /* or absolute */
+                /* left:33.5%; */
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(255, 255, 255);
+                border-radius: 50px;
+            }
+            a:link , a:visited {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 5px 9px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Sparks Bank</h1>
+    <p>*Pay anyone and anywhere, in seconds*</p>
+    <div style="display: flex; justify-content: center;">
+        <hr style="margin: 20px 0px; width: 50%;">
+      </div>
+    
+    <%- include('../partials/messages') %>
+    <br>
+    <div class="container">
+        <form action="/users/login" method="POST">
+            <div>
+                <h2 style="text-align: center;">Login</h2>
+                <br>
+                <label for="email">Email : </label>
+                <input type="email" id="email" name="email" placeholder="Enter Email">
+            </div>
+            <br><br>
+            <div>
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password" placeholder="Enter Password">
+            </div>
+            <br><br>
+            <button type="submit">LOGIN</button>
+            <br><br>
+            <div>Don't have an account ?</div><br>
+            <a href="/users/signup">SignUp</a>
+        </form>
+    </div>
+</body>
+</html>

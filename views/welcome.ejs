@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ</title>
+    <style>
+        body {
+          background-color: #323232;
+        }
+        h1, p {
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+          }
+          div {
+            text-align: center;
+            color: white;
+          }
+          a:link , a:visited {
+                color: rgb(255, 255, 255);
+                background-color: rgb(128, 128, 124);
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 12px;
+            }
+            div.container {
+                 width: 500px;
+                height: 350px;
+                border: 1px solid rgb(99, 99, 117);
+                box-sizing: border-box;
+                position: relative; /* or absolute */
+                /* left:33.5%; */
+                display: flex;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                flex-direction: column;
+                border-radius: 50px;
+            }
+        </style>  
+</head>
+<body>
+    <h1>SPARKS Bank</h1> <br>
+    <p>*Pay anyone and anywhere, in seconds*</p>
+    <p>Welcome to Sparks Bank</p>
+    <div style="display: flex; justify-content: center;">
+      <hr style="margin: 20px 0px; width: 50%;">
+    </div>
+    <div class="container">
+       <p style="color: black;">Create an account or Login</p> <br>
+      <a href="/users/signup">Signup</a>
+       <br> <br>
+      <a href="/users/login">Login</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<style>
+    .errors{
+        color: black;
+        background-color: rgb(245, 132, 132);
+        width: 500px;
+        border: 1px solid rgb(99, 99, 117);
+        box-sizing: border-box;
+        position: relative; /* or absolute */
+        /* left: 33.5%; */
+        top:12%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .error_msg{
+        color: black;
+        background-color: rgb(245, 132, 132);
+        width: 500px;
+        border: 1px solid rgb(99, 99, 117);
+        box-sizing: border-box;
+        position: relative; /* or absolute */
+        /* left: 33.5%; */
+        top:10%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .success_msg{
+        color: black;
+        background-color: rgb(132, 245, 147);
+        width: 500px;
+        border: 1px solid rgb(99, 99, 117);
+        box-sizing: border-box;
+        position: relative; /* or absolute */
+        /* left: 33.5%; */
+        top: 12%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        border-radius: 7px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+
+<% if(typeof errors != 'undefined') { %>
+    <% errors.forEach((err)=> { %>
+        <div class="errors" role="alert">
+            <%= err.msg %>
+          </div>
+   <% }); %>
+
+<% } %>
+
+<% if(success_msg != '') { %>
+    <div class="success_msg" role="alert">
+        <%= success_msg %>
+      </div>
+<% } %>
+
+<% if(error_msg != '') { %>
+    <div class="error_msg" role="alert">
+        <%= error_msg %>
+      </div>
+<% } %>
+
+<% if(error != '') { %>
+    <div class="error_msg" role="alert">
+        <%= error %>
+      </div>
+<% } %>
