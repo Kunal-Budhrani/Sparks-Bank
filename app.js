@@ -52,6 +52,6 @@ app.use('/users',require('./routes/users'));
 
 
 
-const Port = process.env.Port || 3000;
+const Port = process.env.PORT || 3000;
 
 app.listen(Port , console.log('Hey there you are on port 3000'));
